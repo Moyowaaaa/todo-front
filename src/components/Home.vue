@@ -55,7 +55,7 @@ export default {
     },
     async created() {
         try{
-            const response = await axios.get('http://localhost:5000/')
+            const response = await axios.get('https://todo-apiiiii.herokuapp.com/')
             this.todos = response.data
         }
         catch(err) {
@@ -64,14 +64,14 @@ export default {
     },
     methods: {
         async addTodo(){
-            const response = await axios.post('http://localhost:5000/', {
+            const response = await axios.post('https://todo-apiiiii.herokuapp.com/', {
                 Title: this.Title
             })
             this.todos = response.data
             location.reload()
         },
         async deleteTodo(id) {
-            const response = await axios.delete('http://localhost:5000/' + id)
+            const response = await axios.delete('https://todo-apiiiii.herokuapp.com/' + id)
             this.todos = response.data
              location.reload()
         }
